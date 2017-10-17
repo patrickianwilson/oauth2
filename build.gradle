@@ -1,0 +1,12 @@
+ext {
+    mainPackage="golang.org/x/oauth2"
+    //runArgs = ["hello world"]
+    rootPackage="golang.org/x/oauth2"
+}
+
+apply from: "${project.rootProject.projectDir}/config/gradle/golang/golang-conventions.gradle"
+
+task pkg(dependsOn: ["packageGoLib"])
+
+task release(dependsOn: ["pkg"])
+
